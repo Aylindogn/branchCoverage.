@@ -14,37 +14,37 @@ public class TestUtil {
   @Test
   public void example() { assertTrue(true); }
   @Test
-  public void testSingleArgument() {
-    assertFalse(c.compute(5));
+  public void singleArgs() {
+    assertFalse(c.compute(1));
   }
 
   @Test
-  public void testEvenNumberOfArguments() {
+  public void evenNumberOfArgs() {
     assertFalse(c.compute(2, 4));
   }
 
   @Test
-  public void testSumDivisibleByArgument() {
+  public void sumDivisibleByArgs() {
     assertTrue(c.compute(3, 4, 5));
   }
 
   @Test(expected = RuntimeException.class)
-  public void testZeroArgument() {
+  public void zeroArgs() {
     c.compute(3, 0, 5);
   }
 
   @Test
-  public void testNoArgument() {
+  public void noArgs() {
     assertFalse(c.compute());
   }
 
   @Test
-  public void testOddNumberOfArguments() {
+  public void oddNumberOfArgs() {
     assertTrue(c.compute(2,4,6));
   }
 
   @Test
-  public void testSumNotDivisibleByArgument() {
+  public void sumNotDivisibleByArgs() {
     assertFalse(c.compute(3, 5, 6));
   }
 }

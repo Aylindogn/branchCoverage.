@@ -5,7 +5,7 @@ public class Compute {
     this.mq = mq;
   }
 
-  public int countNumberOfOccurrences(String e) {
+  public int countOccurrences(String e) {
     if (mq.size() == 0) {
       return -1;
     }

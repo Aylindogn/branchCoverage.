@@ -16,9 +16,8 @@ public class TestCompute {
 
   @Test
   public void testCountNumberOfOccurrences() {
-    // Mock implementation of MessageQueue for testing purposes
     MessageQueue mq = new MessageQueue() {
-      private String[] elements = {"apple", "banana", "apple", "orange", "apple"};
+      private String[] elements = {"a", "b", "a", "c", "a"};
 
       @Override
       public String getAt(int i) {
@@ -44,18 +43,15 @@ public class TestCompute {
       }
     };
 
-    // Create an instance of Compute with the mocked MessageQueue
     Compute compute = new Compute(mq);
 
-    // Test cases
-    assertEquals(3, compute.countNumberOfOccurrences("apple")); // Expecting 3 occurrences of "apple"
-    assertEquals(1, compute.countNumberOfOccurrences("banana")); // Expecting 1 occurrence of "banana"
-    assertEquals(1, compute.countNumberOfOccurrences("orange")); // Expecting 1 occurrence of "orange"
-    assertEquals(0, compute.countNumberOfOccurrences("grape")); // Expecting 0 occurrence of "grape"
+    assertEquals(3, compute.countOccurrences("a"));
+    assertEquals(1, compute.countOccurrences("b"));
+    assertEquals(1, compute.countOccurrences("c"));
+    assertEquals(0, compute.countOccurrences("d"));
   }
   @Test
   public void testEmpty() {
-    // Mock implementation of MessageQueue for testing purposes
     MessageQueue mq = new MessageQueue() {
       private String[] elements = {};
 
@@ -83,10 +79,9 @@ public class TestCompute {
       }
     };
 
-    // Create an instance of Compute with the mocked MessageQueue
     Compute compute = new Compute(mq);
 
-    // Test cases
-    assertEquals(-1, compute.countNumberOfOccurrences("apple")); // Expecting 3 occurrences of "apple"
+    assertEquals(-1, compute.countOccurrences("a"));
+
   }
 }
